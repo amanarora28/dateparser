@@ -80,10 +80,10 @@ info = {
         "sun"
     ],
     "am": [
-        "am"
+        "am", "a.m.", "a.m"
     ],
     "pm": [
-        "pm"
+        "pm", "p.m.", "p.m"
     ],
     "year": [
         "year",
@@ -182,6 +182,16 @@ info = {
         ],
         "2 day ago": [
             "day before yesterday"
+        ],
+        "in": [
+            "after",
+            "from now"
+        ],
+        "next": [
+            "next"
+        ],
+        "working": [
+            "working", "business"
         ]
     },
     "relative-type-regex": {
@@ -216,8 +226,13 @@ info = {
             "(\\d+) wk ago"
         ],
         "in \\1 day": [
-            "in (\\d+) day",
-            "in (\\d+) days"
+            "in (\\d+)\\s*\\w*\\s* day[s]?",
+            "after (\\d+) day[s]?",
+            "(\\d+) day from now",
+            "(\\d+) days from now",
+            "(\\d+) day in",
+            "(\\d+) days in in",
+            "(\\d+) days in (in+)"
         ],
         "\\1 day ago": [
             "(\\d+) day ago",
@@ -761,6 +776,7 @@ info = {
         "in",
         "from now"
     ],
+
     "simplifications": [
         {
             "an": "1"
@@ -815,6 +831,12 @@ info = {
         },
         {
             "twelve": "12"
+        },
+        {
+            "from": "in"
+        },
+        {
+            "day after tomorrow": "in 2 day"
         }
     ]
 }
